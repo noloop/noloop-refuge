@@ -106,6 +106,10 @@ for editing parentheses.
 It's enabled by default in lisp/elisp/schema/repl...files 
 (check the "~/noloop-refuge/emacs.d/noloop-paredit-mode.el" file for more)
 See the article [The Animated Guide to Paredit](http://danmidwood.com/content/2014/11/21/animated-paredit.html), is cool.
+Use `C-k` to delete the content of the delimiter.
+Use `C-a` to go to initial delimiter.
+Use `C-f` to go to next delimiter.
+Use `C-e` to go to end delimiter.
 
 ### rainbow-mode
 
