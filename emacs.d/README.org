@@ -207,6 +207,16 @@ Move to down window.
 
 Quit EMACS.
 
+*** C-x keys
+
+**** C-x {
+
+Decreases the split window.
+
+**** C-x }
+
+Increases the split window.
+
 *** C-c keys
 
 **** C-c 0
