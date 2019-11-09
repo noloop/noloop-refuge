@@ -1,5 +1,7 @@
 # noloop-refuge
 
+My day-to-day refuge...(emacs configuration + next browser configuration + other things).
+
 ![noloop emacs configuration screen](./images/noloop-emacs-configuration.png)
 
 I use this configuration with [void-linux](https://voidlinux.org/) and [rxvt-unicode](https://github.com/exg/rxvt-unicode).
@@ -75,7 +77,7 @@ or [gruvbox](https://github.com/greduan/emacs-theme-gruvbox):
 ### Hunspell
 
 Open spell-checker with the key `F4` that will use the dictionaries of the 
-"~/.emacs.d/noloop-emacs-conf/dictionaries/" directory.
+"~/noloop-refuge/dictionaries/" directory.
 Dictionaries available by default:
 
 * brasileiro
@@ -183,7 +185,7 @@ Copy/paste from terminal to external program.
 
 ## Commands 
 
-For change the commands visit the "~/.emacs.d/noloop-emacs-conf/noloop-keys.el" file.
+For change the commands visit the "~/noloop-refuge/emacs.d/noloop-keys.el" file.
 
 ### F-keys
 
@@ -239,7 +241,7 @@ Quit EMACS.
 
 #### C-c 0
 
-Change neotree directory to "~/.emacs.d/noloop-emacs-conf/".
+Change neotree directory to "~/noloop-refuge/".
 
 #### C-c 1
 
