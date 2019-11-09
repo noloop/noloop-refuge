@@ -1,10 +1,10 @@
 # noloop-refuge
 
-My day-to-day refuge...(emacs configuration + next browser configuration + other things).
+My day-to-day refuge...([void-linux](https://voidlinux.org/), [emacs](https://www.gnu.org/software/emacs/), [next browser](https://github.com/atlas-engineer/next) configuration + other things).
 
 ![noloop emacs configuration screen](./images/noloop-emacs-configuration.png)
 
-I use this configuration with [void-linux](https://voidlinux.org/) and [rxvt-unicode](https://github.com/exg/rxvt-unicode).
+I use this with [rxvt-unicode](https://github.com/exg/rxvt-unicode).
 
 ## Dependencies
 
