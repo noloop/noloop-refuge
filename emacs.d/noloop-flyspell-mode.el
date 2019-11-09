@@ -1,7 +1,7 @@
 (require 'ispell)
 (require 'flyspell)
 
-(setenv "DICPATH" "~/.emacs.d/noloop-emacs-conf/dictionaries/")
+(setenv "DICPATH" "~/noloop-refuge/dictionaries/")
 (setq ispell-program-name "hunspell")
 
 (defun spell-checker ()
