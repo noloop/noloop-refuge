@@ -1,0 +1,284 @@
+* Emacs configuration 
+
+** Color picker
+
+To use color picker, call ~M-x <RET> noloop-color-picker <RET>~.
+
+** Packages
+
+*** Themes
+
+The default theme is ~srcery~. Call the functions in minibuffer for change
+the theme:
+
+#+html: <a href="https://github.com/srcery-colors/srcery-emacs">srcery</a>:
+
+#+begin_src lisp
+M-x <RET> noloop-theme-srcery <RET>
+#+end_src
+
+#+html: or <a href="https://github.com/greduan/emacs-theme-gruvbox">gruvbox</a>:
+
+#+begin_src lisp
+M-x <RET> noloop-theme-gruvbox <RET>
+#+end_src
+
+*** Hunspell
+
+Open spell-checker with the key ~F4~ that will use the dictionaries of the 
+"~/noloop-refuge/dictionaries/" directory.
+Dictionaries available by default:
+
+- brasileiro
+- english
+
+*** company-mode
+
+The [[http://company-mode.github.io/][company-mode]] is a text completion 
+framework for Emacs. 
+The global-company-mode is enabled by default after init the EMACS.
+Use for select: ~M-n~ to next and ~M-p~ to previous.
+When the completion candidates are shown, press ~F1~ to display the 
+documentation for the selected candidate, or ~C-w~ to see its source. 
+Not all back-ends support this.
+
+*** neotree
+
+The [[https://github.com/jaypei/emacs-neotree][neotree]] is a tree plugin.
+
+Open/close neotree with the key ~F8~.
+
+*** paredit-mode
+
+The [[https://github.com/emacsmirror/paredit][paredit-mode]] is minor mode 
+for editing parentheses.
+It's enabled by default in lisp/elisp/schema/repl...files 
+(check the "~/noloop-refuge/emacs.d/noloop-paredit-mode.el" file for more)
+See the article [[http://danmidwood.com/content/2014/11/21/animated-paredit.html][The Animated Guide to Paredit]], is cool.
+Use ~C-k~ to delete the content of the delimiter.
+Use ~C-a~ to go to initial delimiter.
+Use ~C-f~ to go to next delimiter.
+Use ~C-e~ to go to end delimiter.
+
+*** rainbow-mode
+
+The [[https://github.com/emacsmirror/rainbow-mode][rainbow-mode]] serves to
+colorize color names in buffers.
+By default the ~rainbow-mode~ is enabled for ~css-mode~ and ~emacs-lisp-mode~.
+For active in other modes, call:
+
+#+begin_src lisp
+(rainbow-mode)
+#+end_src
+
+or add new hook in the file ~noloop-rainbow-mode.el~.
+
+*** markdown-mode
+
+The [[https://github.com/jrblevin/markdown-mode][markdown-mode]] is enabled by 
+default in "README.md" (github favored), "*.md" and ".markdown" files.
+
+*** vmd-mode
+
+The [[https://github.com/blak3mill3r/vmd-mode][vmd-mode]] is a fast 
+Github-flavored Markdown previews synchronized with changes to an 
+emacs buffer (no need to save).
+Depends of nodejs and vmd package installed.
+Open/close new preview windown with the key ~F3~.
+
+*** dart-mode and flutter
+
+The [[https://github.com/bradyt/dart-mode][dart-mode]] is an Emacs mode for the Dart language and for use the [[https://github.com/amake/flutter.el][flutter]].
+Depends of [[https://dart.dev/][dart-sdk]] and [[https://flutter.dev/][flutter]] installed.
+For change the path of the dart-sdk and flutter, visit the "noloop-dart-mode.el" file.
+
+*** mmm-mode and vue-mode
+
+The [[https://github.com/purcell/mmm-mode][mmm-mode]] is a minor mode for Emacs that allows Multiple Major Modes 
+to coexist in one buffer.
+The [[https://github.com/AdamNiederer/vue-mode][vue-mode]] is Emacs major mode 
+for vue.js based on mmm-mode.
+
+*** slime
+
+The [[https://github.com/slime/slime][SLIME]] is the Superior Lisp Interaction Mode for Emacs. 
+The slime-mode will automatically come up in every ".lisp" file.
+For change the inferior-lisp-program (default is "/bin/sbcl") visit the "noloop-slime.el" file.
+To fire up SLIME, connect to a Lisp and get a friendly REPL, use ~M-x slime~.
+
+*** slime-company
+
+The [[https://github.com/anwyn/slime-company][company-mode]] is the completion backend for Slime.
+The company-mode will automatically come up in slime.
+
+*** smex
+
+The [[https://github.com/nonsequitur/smex][smex]] is a ~M-x~ enhancement for 
+Emacs. Built on top of Ido, it provides a convenient interface to your 
+recently and most frequently used commands. 
+And to all the other commands, too.
+The smex is enabled by default when use ~M-x~.
+And the smex-major-mode-commands with ~M-X~ (runs Smex, limited to commands 
+that are relevant to the active major mode. Try it with Dired or Magit.).
+For use normal of the ~M-x~ use ~C-c C-c M-x~.
+
+*** ag
+
+The [[https://github.com/Wilfred/ag.el][ag]] is an Emacs frontend to 
+The Silver Searcher.
+Depends of the package "the_silver_searcher" (in void-linux, in other system 
+the name can be different) for the ag works. 
+Use the function "ag" in ~M-x~.
+
+*** multiple-cursors-mode
+
+The [[https://github.com/magnars/multiple-cursors.el][multiple-cursors-mode]]
+is enabled with ~C-c m~ in mode ~edit-lines~.
+Use ~C-c .~ for mark next like this.
+Use ~C-c ,~ for mark previous like this.
+Use ~M-;~ for mark all like this (userful to refatore all words in the buffer).
+
+To get out of multiple-cursors-mode, press ~<return>~ or ~C-g~. The latter will first disable multiple regions before
+disabling multiple cursors. 
+
+*** xclip-mode
+
+Copy/paste from terminal to external program.
+
+*** expand-region-mode
+
+The [[https://github.com/magnars/expand-region.el][expand-region-mode]] 
+Emacs extension to increase selected region by semantic units.
+Use ~M-~~ to expand region. 
+
+To add new configurations write in the "~/noloop-refuge/emacs.d/noloop-expand-region-mode.el" file.
+
+** Commands 
+
+For change the commands visit the "~/noloop-refuge/emacs.d/noloop-keys.el" file.
+
+*** F-keys
+
+**** F3
+
+Open/close vmd-mode. This will open one new window for current markdown buffer.
+
+**** F4
+
+Open/close spell-checker. This will ask which dictionary to use before.
+
+**** F8
+
+Open/close neotree-toggle.
+
+*** C-x C-keys
+
+**** C-x C-e
+
+Load "~/.emacs.d/init.el" file.
+
+**** C-x o
+
+Go to other window.
+
+**** C-x p
+
+Go to preview window.
+
+*** C-c C-keys
+
+**** C-c C-a
+
+Move to left window.
+
+**** C-c C-d
+
+Move to right window.
+
+**** C-c C-w
+
+Move to up window.
+
+**** C-c C-s
+
+Move to down window.
+
+**** C-c C-x
+
+Quit EMACS.
+
+*** C-c keys
+
+**** C-c 0
+
+Change neotree directory to "~/noloop-refuge/".
+
+**** C-c 1
+
+Change neotree directory to "~/lisp-dev/". 
+
+**** C-c 2
+
+Change neotree directory to "~/dart-dev/". 
+
+**** C-c 3
+
+Change neotree directory to "~/javascript-dev/". 
+
+**** C-c m
+
+In multiple-cursors-mode. Is enabled with ~C-c m~ in mode ~edit-lines~.
+
+**** C-c .
+
+In multiple-cursors-mode. Use to mark next like this.
+
+**** C-c ,
+
+In multiple-cursors-mode. Use to for mark previous like this.
+
+*** C-keys
+
+**** C-k
+
+In paredit-mode. Use to delete the content of the delimiter.
+
+**** C-a
+
+In paredit-mode. Use to go to initial delimiter.
+
+**** C-f
+
+In paredit-mode. Use to go to next delimiter.
+
+**** C-e
+
+In paredit-mode. Use to go to end delimiter.
+
+*** M-keys
+
+**** M-;
+
+In multiple-cursors-mode. Use to mark all like this.
+
+**** M-~
+
+Expand-region.
+
+*** C-u Keys
+
+**** C-u M-x align
+
+To align the columns of selection text or all text when unselected.
+
+** Help
+
+To get help while using, call the noloop-help in ~M-x~.
+Example:
+
+~M-x noloop-help <RET> smex <RET>~ for receive a help about smex.
+
+or ~M-x noloop-help <RET> C-c C-x <RET>~ for receive a help about a specific command.
+
+or also ~M-x noloop-help <RET> something <RET>~ to go to the position of this sequence of words.q 
+

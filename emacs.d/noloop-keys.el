@@ -35,5 +35,6 @@
 
 ;;; M-keys
 (global-set-key (kbd "M-;") 'mc/mark-all-like-this)
+(global-set-key (kbd "M-~") 'er/expand-region)
 
 (provide 'noloop-keys)
