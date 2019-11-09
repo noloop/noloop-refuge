@@ -99,6 +99,14 @@ The [neotree](https://github.com/jaypei/emacs-neotree) is a tree plugin.
 
 Open/close neotree with the key `F8`.
 
+### paredit-mode
+
+The [paredit-mode](https://github.com/emacsmirror/paredit) is minor mode 
+for editing parentheses.
+It's enabled by default in lisp/elisp/schema/repl...files 
+(check the "~/noloop-refuge/emacs.d/noloop-paredit-mode.el" file for more)
+See the article [The Animated Guide to Paredit](http://danmidwood.com/content/2014/11/21/animated-paredit.html), is cool.
+
 ### rainbow-mode
 
 The [rainbow-mode](https://github.com/emacsmirror/rainbow-mode) serves to
@@ -182,6 +190,14 @@ disabling multiple cursors.
 ### xclip-mode
 
 Copy/paste from terminal to external program.
+
+### expand-region-mode
+
+The [expand-region-mode](https://github.com/magnars/expand-region.el) 
+Emacs extension to increase selected region by semantic units.
+Use `M-~` to expand region. 
+
+To add new configurations write in the "~/noloop-refuge/emacs.d/noloop-expand-region-mode.el" file.
 
 ## Commands 
 

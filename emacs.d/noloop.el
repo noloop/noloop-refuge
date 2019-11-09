@@ -9,6 +9,7 @@
 (require 'noloop-neotree)
 (require 'noloop-erc)
 (require 'noloop-keys)
+(require 'noloop-paredit-mode)
 (require 'noloop-company-mode)
 (require 'noloop-rainbow-mode)
 (require 'noloop-markdown-mode)

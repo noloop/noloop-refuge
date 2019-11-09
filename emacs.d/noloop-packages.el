@@ -24,7 +24,9 @@
     smex
     ag
     multiple-cursors
-    xclip)
+    xclip
+    paredit
+    expand-region)
   "A list of packages to ensure are installed at launch.")
 
 (defun my-packages-installed-p ()
