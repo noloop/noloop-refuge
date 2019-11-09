@@ -78,13 +78,16 @@ URxvt*font: xft:Monospace:pixelsize=12
 ! URxvt.colorUL: #4682B4
 ! URxvt*letterSpace: -1
 
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard,clipboard
-!URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard,clipboard,tabbled
 !URxvt.urlLauncher: sensible-browser
 !URxvt.matcher.button: 1
 
-URxvt.perl-ext-common: tabbled
+! Turn on/off ISO 14755 (default enabled).
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 URxvt.tabbed.tabbar-fg: 5
 URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 14
 URxvt.tabbed.tab-bg: 0
+
