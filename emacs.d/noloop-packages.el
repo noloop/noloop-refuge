@@ -21,12 +21,14 @@
     vue-mode
     slime
     slime-company
+    slime-repl-ansi-color
     smex
     ag
     multiple-cursors
     xclip
     paredit
-    expand-region)
+    expand-region
+    magit)
   "A list of packages to ensure are installed at launch.")
 
 (defun my-packages-installed-p ()

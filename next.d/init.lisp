@@ -1,6 +1,6 @@
 (setf +platform-port-command+
-      ;;"~/common-lisp/next-pyqt-webengine/next-pyqt-webengine")
-      "~/common-lisp/next/ports/gtk-webkit/next-gtk-webkit")
+      ;; "~/Programs/next-pyqt-webengine/next-pyqt-webengine")
+      "~/lisp-dev/next/ports/gtk-webkit/next-gtk-webkit")
 
 (defun my-interface-defaults ()
   (setf (search-engines *interface*)
@@ -19,10 +19,39 @@
                      :success-msg (format nil "Video downloaded to ~a." (or video-url (url (current-buffer))))
                      :error-msg (format nil "Failed to download video.~&")))
 
-;; (define-key :keymap (getf (keymap-scheme
-;;                         (find-mode (current-buffer) 'web-mode))
-;;                        :emacs)
-;;  "C-r" #'scroll-to-bottom)
+(defvar *noloop-keymap* (make-keymap)
+  "Keymap for noloop-mode.")
 
-;;#'scroll-to-top
+(define-key :keymap *noloop-keymap* "C-p" #'scroll-to-bottom)
+
+(define-mode noloop-mode ()
+  "Dummy mode for the custom key bindings in *noloop-keymap*."
+  ((keymap-schemes :initform (list :emacs-map *noloop-keymap*
+                                   :vi-normal *noloop-keymap*))))
+
+(defun noloop-buffer-defaults (buffer)
+  (dolist (mode '(web-mode
+                  noloop-mode))
+    (pushnew mode (default-modes buffer))))
+
+(defun noloop-interface-defaults ()
+  (hooks:add-to-hook (hooks:object-hook *interface* 'buffer-make-hook)
+                     #'noloop-buffer-defaults))
+
+(hooks:add-to-hook '*after-init-hook* #'noloop-interface-defaults)
+
+
+;; (hooks:add-to-hook
+;;  (hooks:object-hook *after-init-hook* 'web-mode-hook)
+;;  #'(lambda (mode)
+;;    (define-key :keymap (getf (keymap-schemes mode) :emacs)
+;;      "C-c C-c" #'scroll-to-bottom)))
+
+;; (defvar *noloop-keymap* (make-keymap) "The noloop keymap.")
+;;(defun my-test () (print t))
+;; (hooks:add-to-hook
+;;  '*after-init-hook*
+;;  (lambda ()
+;;    (print "oioioioioio")
+;;    (set-key (getf (keymap-schemes (find-mode (current-buffer) 'my-mode)) :emacs) "M-;" #'scroll-to-bottom)))
 

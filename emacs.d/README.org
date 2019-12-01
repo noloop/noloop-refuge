@@ -111,6 +111,44 @@ To fire up SLIME, connect to a Lisp and get a friendly REPL, use ~M-x slime~.
 The [[https://github.com/anwyn/slime-company][company-mode]] is the completion backend for Slime.
 The company-mode will automatically come up in slime.
 
+*** slime-repl-ansi-color
+
+The slime-repl-ansi-color is used to active ANSI colors in SLIME REPL.
+Active with ~M-x slime-repl-ansi-color-mode~.
+
+*** quicklisp-slime-helper...
+
+This is only need if want install the quicklisp. Follow the next steps to 
+install the quicklisp:
+
+**In your shell**
+
+#+begin_src
+curl -O http://beta.quicklisp.org/quicklisp.lisp
+sbcl --load quicklisp.lisp
+#+end_src
+
+**Inside the context of sbcl**
+
+#+begin_src lisp
+(quicklisp-quickstart:install)
+(ql:quickload "quicklisp-slime-helper")
+#+end_src
+
+**Add to noloop-slime.el file the next line before (setq inferior-lisp-program...**
+
+#+begin_src lisp
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+#+end_src
+
+**So in the SLIME**
+
+#+begin_src lisp
+(load "~/quicklisp/setup.lisp")
+#+end_src
+
+Now you can use the quicklisp functions in the SLIME.
+
 *** smex
 
 The [[https://github.com/nonsequitur/smex][smex]] is a ~M-x~ enhancement for 
@@ -152,6 +190,11 @@ Emacs extension to increase selected region by semantic units.
 Use ~M-~~ to expand region. 
 
 To add new configurations write in the "~/noloop-refuge/emacs.d/noloop-expand-region-mode.el" file.
+
+*** Magit
+
+The [[https://magit.vc/][magit-mode]] is an interface to the version control system Git, implemented as an Emacs package. 
+Use ~C-x g~ for magit-status that show are informations of the current git repository.
 
 ** Commands 
 
@@ -229,11 +272,15 @@ Change neotree directory to "~/lisp-dev/".
 
 **** C-c 2
 
-Change neotree directory to "~/dart-dev/". 
+Change neotree directory to "~/c-dev/". 
 
 **** C-c 3
 
 Change neotree directory to "~/javascript-dev/". 
+
+**** C-c 4
+
+Change neotree directory to "~/common-lisp/". 
 
 **** C-c m
 

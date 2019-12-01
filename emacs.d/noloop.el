@@ -16,6 +16,7 @@
 (require 'noloop-flyspell-mode)
 (require 'noloop-dart-mode)
 (require 'noloop-vue-mode)
+(require 'noloop-magit-mode)
 (require 'noloop-smex)
 (require 'noloop-slime)
 (require 'noloop-color-picker)
