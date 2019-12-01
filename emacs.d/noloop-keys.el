@@ -6,9 +6,11 @@
 ;;; C-x C-keys
 (global-set-key (kbd "C-x C-e")
 		(lambda () (interactive) (load-file "~/.emacs.d/init.el")))
+;;; C-x keys
 (global-set-key (kbd "C-x o") 'other-window)
 (defun prev-window () (interactive) (other-window -1))
 (global-set-key (kbd "C-x p") 'prev-window)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;;; C-c C-keys
 (global-set-key (kbd "C-c C-a") 'windmove-left)

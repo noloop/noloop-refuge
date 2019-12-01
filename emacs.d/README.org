@@ -199,6 +199,7 @@ In magit-status buffer, use ~n~ and ~p~ to move next and previous.
 Use ~s~ for mark as stage one file.
 Use ~?~ for help.
 Use ~c c~ for commit.
+Use ~C-c C-c~ to finish the commit.
 Use ~P~ to push.
 
 ** Commands 
@@ -264,6 +265,10 @@ Decreases the split window.
 **** C-x }
 
 Increases the split window.
+
+**** C-x g
+
+For open magit-status buffer.
 
 *** C-c keys
 
