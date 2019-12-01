@@ -195,6 +195,11 @@ To add new configurations write in the "~/noloop-refuge/emacs.d/noloop-expand-re
 
 The [[https://magit.vc/][magit-mode]] is an interface to the version control system Git, implemented as an Emacs package. 
 Use ~C-x g~ for magit-status that show are informations of the current git repository.
+In magit-status buffer, use ~n~ and ~p~ to move next and previous.
+Use ~s~ for mark as stage one file.
+Use ~?~ for help.
+Use ~c c~ for commit.
+Use ~P~ to push.
 
 ** Commands 
 
