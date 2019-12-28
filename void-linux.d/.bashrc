@@ -112,13 +112,60 @@ fi
 alias next='export $(dbus-launch); firejail --ignore=nodbus next'
 alias emacs='export $(dbus-launch); emacs'
 
-alias android-sdk='sh /home/noloop/PerduGames/android-studio/bin/studio.sh'
-alias rm='rm -i'
+sudo() {
+  if alias "$1" &> /dev/null ; then
+    $(type "$1" | sed -E 's/^.*`(.*).$/\1/') "${@:2}"
+  else
+    command sudo "$@"
+  fi
+}
+
+move_to_trash() {
+  if [ $# == 0 ]; then
+    echo "rm without arguments!"
+    return 0
+  elif [ $# == 1 ]; then
+    if [ -f "$1" ] || [ -d "$1" ]; then 
+      name="$1" 
+    else 
+      echo "$1 doesn't exist!"
+      return 0
+    fi	    
+  elif [ $# == 2 ]; then
+    if [ -f "$2" ] || [ -d "$2" ]; then
+      name="$2"
+    else
+      echo "$2 doesn't exist!"
+      return 0
+    fi
+  elif [ $# -gt 2 ]; then
+    echo "what are you doing???"
+    return 0    
+  fi
+  mkdir -p ~/Trash
+  now="$(date +'%Hh-%Mm-%Ss-%dd-%mm-%Yy')"  
+  id_name=$(basename "$name").$now
+  mv "$name" ~/Trash/"$id_name"
+  echo "$name has been moved to ~/Trash/$id_name"
+  return 1
+}
+
+empty_trash() {
+  if [ $# == 1 ]; then
+    year="$1"y
+  else
+   year=""
+  fi	  
+  rm -rf ~/Trash/*$year
+  rm -rf ~/Trash/.*$year
+}
+
+alias rm='move_to_trash'
 alias mv='mv -i'
 alias cp='cp -i'
 
-export ANDROID_HOME="/home/noloop/Android/Sdk/"
-export ANDROID_NDK_ROOT="/home/noloop/Android/Sdk/ndk-bundle/"
+export ANDROID_HOME="/home/noloop/Programs/Android/"
+export ANDROID_NDK_ROOT="/home/noloop/Programs/Android/ndk-bundle/"
 
 export NVM_DIR="/home/noloop/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
