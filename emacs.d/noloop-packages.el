@@ -1,24 +1,28 @@
 ;;; PACKAGES-ARCHIVES
 (require 'package) 
-(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"));;(add-to-list 'packages-archives '("melpa" . "http://stable.melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
+(add-to-list 'packages-archives '("melpa" . "http://stable.melpa.org/packages/"))
+;;(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-install 'use-package)
 
 ;;; PACKAGES-INSTALL
 (require 'cl-lib)
 (package-initialize)
 (defvar my-packages
-  '(use-package
-    srcery-theme
+  '(srcery-theme
     gruvbox-theme
     company
     neotree
+    treemacs
     rainbow-mode
     markdown-mode
-    vmd-mode
+    lsp-mode
+    lsp-dart
+    lsp-ui
+    lsp-treemacs
     dart-mode
     flutter
     mmm-mode
-    vue-mode
     slime
     slime-company
     slime-repl-ansi-color

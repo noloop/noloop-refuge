@@ -13,8 +13,7 @@
 ;; Enable windows Style Undo
 (global-set-key [(control z)] 'undo)
 
-;;(add-to-list 'load-path "~/.emacs.d/noloop-emacs-conf/contrib/")
-;;(load "~/.emacs.d/noloop-emacs-conf/contrib/emacs-application-framework/eaf.el")
+(setq-default indent-tabs-mode nil)
 
 (provide 'noloop-window)
 

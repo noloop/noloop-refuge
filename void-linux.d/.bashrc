@@ -163,6 +163,7 @@ empty_trash() {
 alias rm='move_to_trash'
 alias mv='mv -i'
 alias cp='cp -i'
+alias xbps-fix='sudo xbps-remove void-repo-nonfree | sudo xbps-install void-repo-nonfree  | sudo xbps-remove -Oo | sudo xbps-install -Su'
 
 export ANDROID_HOME="/home/noloop/Programs/Android/"
 export ANDROID_NDK_ROOT="/home/noloop/Programs/Android/ndk-bundle/"

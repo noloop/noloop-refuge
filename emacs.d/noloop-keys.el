@@ -1,7 +1,7 @@
 ;;; F-keys
-(global-set-key [f3] 'vmd-mode)
 (global-set-key [f4] 'spell-checker)
 (global-set-key [f8] 'neotree-toggle)
+(global-set-key [f9] 'treemacs)
 
 ;;; C-x C-keys
 (global-set-key (kbd "C-x C-e")
@@ -35,6 +35,12 @@
 		(lambda () (interactive) 
 		  (neotree-dir "~/android-dev/")))
 (global-set-key (kbd "C-c 5") 
+		(lambda () (interactive) 
+		  (neotree-dir "~/flutter-dev/")))
+(global-set-key (kbd "C-c 6") 
+		(lambda () (interactive) 
+		  (neotree-dir "~/html-dev/")))
+(global-set-key (kbd "C-c 7") 
 		(lambda () (interactive) 
 		  (neotree-dir "~/common-lisp/")))
 (global-set-key (kbd "C-c m") 'mc/edit-lines)

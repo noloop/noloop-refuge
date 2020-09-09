@@ -1,5 +1,5 @@
 (setf +platform-port-command+
-      ;; "~/Programs/next-pyqt-webengine/next-pyqt-webengine")
+      ;;"~/Programs/next-pyqt-webengine/next-pyqt-webengine")
       "~/lisp-dev/next/ports/gtk-webkit/next-gtk-webkit")
 
 (defun my-interface-defaults ()

@@ -48,6 +48,11 @@ The [[https://github.com/jaypei/emacs-neotree][neotree]] is a tree plugin.
 
 Open/close neotree with the key ~F8~.
 
+*** treemacs
+
+The [[https://github.com/Alexander-Miller/treemacs][treemacs]] is a tree plugin.
+Open/close treemacs with the key ~F9~.
+
 *** paredit-mode
 
 The [[https://github.com/emacsmirror/paredit][paredit-mode]] is minor mode 
@@ -78,26 +83,29 @@ or add new hook in the file ~noloop-rainbow-mode.el~.
 The [[https://github.com/jrblevin/markdown-mode][markdown-mode]] is enabled by 
 default in "README.md" (github favored), "*.md" and ".markdown" files.
 
-*** vmd-mode
-
-The [[https://github.com/blak3mill3r/vmd-mode][vmd-mode]] is a fast 
-Github-flavored Markdown previews synchronized with changes to an 
-emacs buffer (no need to save).
-Depends of nodejs and vmd package installed.
-Open/close new preview windown with the key ~F3~.
-
 *** dart-mode and flutter
 
 The [[https://github.com/bradyt/dart-mode][dart-mode]] is an Emacs mode for the Dart language and for use the [[https://github.com/amake/flutter.el][flutter]].
 Depends of [[https://dart.dev/][dart-sdk]] and [[https://flutter.dev/][flutter]] installed.
 For change the path of the dart-sdk and flutter, visit the "noloop-dart-mode.el" file.
 
-*** mmm-mode and vue-mode
+*** lsp-mode and lsp-dart 
+
+The [[https://github.com/emacs-lsp/lsp-mode][lsp-mode]] is a Emacs client/library for the Language Server Protocol.
+and the [[http://github.com/emacs-lsp/lsp-mode][lsp-dart]] ia a Emacs Dart IDE using lsp-mode to connect to Dart Analysis Server.
+
+*** lsp-ui
+
+The [[https://github.com/emacs-lsp/lsp-ui][lsp-ui]] is a Flycheck, documentation and code actions support.
+
+*** lsp-treemacs
+
+The [[https://github.com/emacs-lsp/lsp-treemacs][lsp-treemacs]] ia a lsp-mode GUI controls implemented using treemacs.
+
+*** mmm-mode
 
 The [[https://github.com/purcell/mmm-mode][mmm-mode]] is a minor mode for Emacs that allows Multiple Major Modes 
 to coexist in one buffer.
-The [[https://github.com/AdamNiederer/vue-mode][vue-mode]] is Emacs major mode 
-for vue.js based on mmm-mode.
 
 *** slime
 
@@ -208,10 +216,6 @@ For change the commands visit the "~/noloop-refuge/emacs.d/noloop-keys.el" file.
 
 *** F-keys
 
-**** F3
-
-Open/close vmd-mode. This will open one new window for current markdown buffer.
-
 **** F4
 
 Open/close spell-checker. This will ask which dictionary to use before.
@@ -219,6 +223,10 @@ Open/close spell-checker. This will ask which dictionary to use before.
 **** F8
 
 Open/close neotree-toggle.
+
+**** F9
+
+Open/close treemacs
 
 *** C-x C-keys
 
@@ -290,7 +298,19 @@ Change neotree directory to "~/javascript-dev/".
 
 **** C-c 4
 
-Change neotree directory to "~/common-lisp/". 
+Change neotree directory to "~/android-dev/". 
+
+**** C-c 5
+
+Change neotree directory to "~/flutter-dev/".
+
+**** C-c 6
+
+Change neotree directory to "~/html-dev/".
+
+**** C-c 7
+
+Change neotree directory to "~/common-lisp/".
 
 **** C-c m
 
