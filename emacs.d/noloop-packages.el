@@ -1,7 +1,7 @@
 ;;; PACKAGES-ARCHIVES
 (require 'package) 
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
-(add-to-list 'packages-archives '("melpa" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://stable.melpa.org/packages/"))
 ;;(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-install 'use-package)
 
