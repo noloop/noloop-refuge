@@ -280,7 +280,7 @@ click-left = ~/Programs/blender/blender-2.90.0-linux64/blender
 [module/blender-nvidia]
 type = custom/text
 content = "%{F#698891}| %{F-}  "
-click-left = prime-run ~/Programs/blender/blender-2.90.0-linux64/blender
+click-left = ~/scripts/disable-picom-prime-run.sh ~/Programs/blender/blender-2.90.0-linux64/blender
 
 [module/emacs]
 type = custom/text
