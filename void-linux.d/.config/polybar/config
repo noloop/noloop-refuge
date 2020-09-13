@@ -255,42 +255,42 @@ format-unmounted = <label-unmounted>
 [module/ranger]
 type = custom/text
 content = "%{F#698891}| %{F-}  R"
-click-left = urxvt -e $SHELL -c ranger &
+click-left = urxvt -e $SHELL -c ranger >/dev/null 2>&1 &
 
 [module/dolphin]
 type = custom/text
 content = "%{F#698891}| %{F-}  D"
-click-left = dolphin >/dev/null 2>&1
+click-left = dolphin >/dev/null 2>&1 &
 
 [module/chromium]
 type = custom/text
 content = "%{F#698891}| %{F-} "
-click-left = chromium &
+click-left = chromium >/dev/null 2>&1 &
 
 [module/okular]
 type = custom/text
 content = "%{F#698891}| %{F-} "
-click-left = okular >/dev/null 2>&1
+click-left = okular >/dev/null 2>&1 &
 
 [module/blender]
 type = custom/text
 content = "%{F#698891}| %{F-} "
-click-left = ~/Programs/blender/blender-2.90.0-linux64/blender
+click-left = ~/Programs/blender/blender-2.90.0-linux64/blender >/dev/null 2>&1 &
 
 [module/blender-nvidia]
 type = custom/text
 content = "%{F#698891}| %{F-}  "
-click-left = ~/scripts/disable-picom-prime-run.sh ~/Programs/blender/blender-2.90.0-linux64/blender
+click-left = ~/scripts/disable-picom-prime-run.sh ~/Programs/blender/blender-2.90.0-linux64/blender >/dev/null 2>&1 &
 
 [module/emacs]
 type = custom/text
 content = "%{F#698891}| %{F-} "
-click-left = urxvt -e $SHELL -c emacs
+click-left = urxvt -e $SHELL -c emacs >/dev/null 2>&1 &
 
 [module/rofi]
 type = custom/text
 content = "%{F#698891}| %{F-} "
-click-left = rofi -show run
+click-left = rofi -show run >/dev/null 2>&1 &
 
 [module/menu-apps]
 type = custom/menu
@@ -298,15 +298,17 @@ expand-right = true
 menu-0-0 = Apps
 menu-0-0-exec = menu-open-1
 menu-1-0 = rofi-calc
-menu-1-0-exec = rofi -show calc -modi calc -no-show-match -no-sort &
-menu-1-1 =  steam
-menu-1-1-exec = steam >/dev/null 2>&1
-menu-1-2 = vlc
-menu-1-2-exec = vlc &
-menu-1-3 =  nvidia
-menu-1-3-exec = prime-run chromium &
-menu-1-4 = Peek GIF
-menu-1-4-exec = peek &
+menu-1-0-exec = rofi -show calc -modi calc -no-show-match -no-sort >/dev/null 2>&1 &
+menu-1-1 = 
+menu-1-1-exec = steam >/dev/null 2>&1 &
+menu-1-2 =  nvidia
+menu-1-2-exec = ~/scripts/disable-picom-prime-run.sh steam >/dev/null 2>&1 &
+menu-1-3 = vlc
+menu-1-3-exec = vlc >/dev/null 2>&1 &
+menu-1-4 =  nvidia
+menu-1-4-exec = prime-run chromium >/dev/null 2>&1 &
+menu-1-5 = Peek GIF
+menu-1-5-exec = peek >/dev/null 2>&1 &
 
 label-open = noloop
 label-close = 
