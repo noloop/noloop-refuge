@@ -38,5 +38,5 @@ bspc config presel_feedback_color "$color1"
 #bspc config presel_border_color "$color1"
 
 feh --bg-center $HOME/Images/wallpapers/blue-gray-lake.jpg
-wal -R
+wal -s -R
 $HOME/.config/polybar/launch.sh
