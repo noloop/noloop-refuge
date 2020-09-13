@@ -3,7 +3,7 @@
 URxvt*.transparent: true
 
 ! DE 0 A 99 PARA TER O FUNDO MAIS ESCURO, DE 101 A 200 PARA TER O FUNDO MAIS CLARO
-URxvt*.shading: 10
+URxvt*.shading: 31
 
 ! PARA DESATIVAR A BARRA DE ROLAGEM DO urxvt
 URxvt.scrollBar: false
@@ -70,15 +70,21 @@ URxvt*saveLines : 8000
 URxvt.depth : 100
 
 ! FONTS
-! RUN "fc-list" PARA LISTAR AS FONTES DISPONIVEIS
-URxvt*font: xft:Monospace:pixelsize=12
+! Run "fc-list" to list all available fonts
+URxvt.font: xft:Iosevka:pixelsize=17
+emacs.font: xft:Iosevka:pixelsize=17
 
 ! CLICKABLE URLS
 ! URxvt;matcher.rend.0 Uline Bold fg5
 ! URxvt.colorUL: #4682B4
 ! URxvt*letterSpace: -1
 
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard,clipboard,tabbled
+URxvt.perl-ext-common: default,resize-font,matcher,selection-to-clipboard,clipboard,tabbled
+!You can also configure the number of steps to take when changing the font size:
+!URxvt.resize-font.step: 2i
+!URxvt.resize-font.smaller: C-j
+!URxvt.resize-font.bigger:  C-k
+
 !URxvt.urlLauncher: sensible-browser
 !URxvt.matcher.button: 1
 

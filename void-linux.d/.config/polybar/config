@@ -13,7 +13,7 @@
 ;   go to https://github.com/jaagr/polybar
 ;
 ;   The README contains alot of information
-;
+;   polybar 3.4.3
 ;==========================================================
 
 [colors]
@@ -143,7 +143,8 @@ headphone-id = 2
 type = internal/network
 interface = enp7s0
 interval = 3.0
-udspeed-minwidth = 5
+;%downspeed:min:5%
+;%upspeed:min:5%
 accumulate-stats = true
 unknown-as-up = true
 ; All labels support the following tokens:
@@ -155,7 +156,7 @@ unknown-as-up = true
 ;   %upspeed%   [wireless+wired]
 ;   %downspeed% [wireless+wired]
 ;   %linkspeed% [wired]
-label-connected = %ifname% %local_ip%
+label-connected = %local_ip%
 format-connected = ﯱ <label-connected>
 ;; format-connected = <ramp-signal> <label-connected> 
 ;ramp-signal-0 = 😱
@@ -172,10 +173,11 @@ format-disconnected = <label-disconnected>
 type = internal/network
 interface = wlp0s20f3
 interval = 3.0
-udspeed-minwidth = 5
+;%downspeed:min:5%
+;%upspeed:min:5%
 accumulate-stats = true
 unknown-as-up = true
-label-connected = %essid% %signal% %ifname% %local_ip%
+label-connected = %essid% %signal%
 format-connected =  <label-connected>
 ;; format-connected = <ramp-signal> <label-connected> 
 ;ramp-signal-0 = 😱
@@ -206,15 +208,16 @@ format = %{F#698891}| %{F-} <label>
 [module/memory]
 type = internal/memory
 interval = 3
-label =  %gb_used%/%gb_free%
+label =  %gb_used%/%gb_free%		
 format = %{F#698891}| %{F-} <label>
 
 [module/temperature]
 type = internal/temperature
 interval = 0.5
 thermal-zone = 0
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input
 base-temperature = 20
-warn-temperature = 60
+warn-temperature = 69
 label = %temperature-c%
 format = %{F#698891}| %{F-} <ramp> <label>
 label-warn = %temperature-c%
@@ -257,7 +260,7 @@ click-left = urxvt -e $SHELL -c ranger &
 [module/dolphin]
 type = custom/text
 content = "%{F#698891}| %{F-}  D"
-click-left = dolphin &
+click-left = dolphin >/dev/null 2>&1
 
 [module/chromium]
 type = custom/text
@@ -267,17 +270,17 @@ click-left = chromium &
 [module/okular]
 type = custom/text
 content = "%{F#698891}| %{F-} "
-click-left = okular &
+click-left = okular >/dev/null 2>&1
 
 [module/blender]
 type = custom/text
 content = "%{F#698891}| %{F-} "
-click-left = blender
+click-left = ~/Programs/blender/blender-2.90.0-linux64/blender
 
 [module/blender-nvidia]
 type = custom/text
 content = "%{F#698891}| %{F-}  "
-click-left = prime-run blender
+click-left = prime-run ~/Programs/blender/blender-2.90.0-linux64/blender
 
 [module/emacs]
 type = custom/text
@@ -296,12 +299,14 @@ menu-0-0 = Apps
 menu-0-0-exec = menu-open-1
 menu-1-0 = rofi-calc
 menu-1-0-exec = rofi -show calc -modi calc -no-show-match -no-sort &
-menu-1-1 = Peek GIF
-menu-1-1-exec = peek &
+menu-1-1 =  steam
+menu-1-1-exec = steam >/dev/null 2>&1
 menu-1-2 = vlc
-menu-1-2-exec = vlc &[21~
-menu-1-3 = Chromium nvidia
+menu-1-2-exec = vlc &
+menu-1-3 =  nvidia
 menu-1-3-exec = prime-run chromium &
+menu-1-4 = Peek GIF
+menu-1-4-exec = peek &
 
 label-open = noloop
 label-close = 

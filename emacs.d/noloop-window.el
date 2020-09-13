@@ -13,7 +13,5 @@
 ;; Enable windows Style Undo
 (global-set-key [(control z)] 'undo)
 
-(setq-default indent-tabs-mode nil)
-
 (provide 'noloop-window)
 

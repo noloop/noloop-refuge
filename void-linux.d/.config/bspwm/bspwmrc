@@ -13,15 +13,18 @@ bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^6' state=floating follow=on
 bspc rule -a 'URxvt:emacs:*' desktop='^2'
-bspc rule -a Chromium desktop='^4' state=floating
-bspc rule -a vlc desktop='^5' state=floating
+bspc rule -a Chromium desktop='^4' state=floating follow=on
+bspc rule -a vlc desktop='^5' state=floating follow=on
 bspc rule -a okular desktop='^3' follow=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Peek state=floating center=true
+bspc rule -a Blender state=floating
+bspc rule -a Steam state=floating
 #bspc config click_to_focus button1
 bspc config focus_follows_pointer true
 
-[ "$1" = 0 ] && { urxvt -name emacs -e emacs -nw & }
+#xrdb ~/.Xresources
+urxvt -name emacs -e emacs -nw &
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
@@ -37,4 +40,3 @@ bspc config presel_feedback_color "$color1"
 feh --bg-center $HOME/Images/wallpapers/blue-gray-lake.jpg
 wal -s -t -R
 $HOME/.config/polybar/launch.sh
-
