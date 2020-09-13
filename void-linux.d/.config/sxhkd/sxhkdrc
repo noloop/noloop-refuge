@@ -6,15 +6,23 @@
 super + Return
 	urxvt
 
-# program launcher
+# rofi launcher
 super + @space
 	rofi -show run
 
-# program launcher
+# polybar launcher
+super + alt + p
+	~/.config/polybar/launch.sh
+
+# polybar quit
+super + ctrl + alt + p
+	killall -q polybar
+
+# conky launcher
 super + alt + c
 	conky
 
-# program launcher
+# conky quit
 super + ctrl + alt + c
 	killall -q conky
 
