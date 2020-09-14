@@ -34,6 +34,57 @@ foam = #8aa4ab
 inactive = #66
 separator= #698891
 
+[bar/noloopbardesktops]
+width = 20%
+height = 27
+offset-x = 768
+radius = 0
+bottom = true
+fixed-center = true
+font-0 = DejaVu Sans:style=Regular:size=11;2
+font-1 = Iosevka Nerd Font:pixelsize=13;3
+override-redirect = true
+wm-restack = bspwm
+modules-center = bspwm 
+background = ${colors.water}
+foreground = ${colors.sand}
+line-size = 0
+line-color = #f00
+border-size = 0
+border-color = #00000000
+padding-left = 2
+padding-right = 2
+module-margin = 1
+enable-scroll = false
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+inline-mode = false
+enable-click = false
+enable-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+ws-icon-default = 
+format = <label-state>
+label-focused = " %name% %icon% "
+label-focused-foreground = #416270
+label-focused-background = #8aa4ab
+label-focused-underline = #8aa4ab
+label-occupied = "%icon%"
+label-occupied-underline = #8aa4ab
+label-urgent = "%icon%"
+label-urgent-foreground = #698891
+label-urgent-background = #8aa4ab
+label-urgent-underline = #8aa4ab
+label-empty = "%icon%"
+label-empty-foreground = #55
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #bba686
+
 [bar/noloopbar]
 width = 98%
 height = 27
