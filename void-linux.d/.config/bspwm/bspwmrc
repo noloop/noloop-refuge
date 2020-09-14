@@ -12,7 +12,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^6' state=floating follow=on
-bspc rule -a 'URxvt:emacs:*' desktop='^2'
+bspc rule -a 'URxvt:emacs:*' desktop='^2' state=fullscreen
 bspc rule -a Chromium desktop='^4' state=floating follow=on
 bspc rule -a vlc desktop='^5' state=floating follow=on
 bspc rule -a okular desktop='^3' follow=on
