@@ -1,7 +1,7 @@
 # void-linux configuration
 Settings in /home.
 
-![noloop emacs configuration screen](./images/noloop-voidlinux-screen.png)
+![noloop emacs configuration screen](../images/noloop-voidlinux-screen.png)
 
 Bspwm
 sxhkd
