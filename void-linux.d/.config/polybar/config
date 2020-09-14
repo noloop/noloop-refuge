@@ -290,7 +290,7 @@ click-left = urxvt -e $SHELL -c emacs >/dev/null 2>&1 &
 [module/rofi]
 type = custom/text
 content = "%{F#698891}| %{F-} "
-click-left = rofi -show run >/dev/null 2>&1 &
+click-left = rofi -show run -modi run -location 0 -width 30 >/dev/null 2>&1 &
 
 [module/menu-apps]
 type = custom/menu
