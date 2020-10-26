@@ -1,3 +1,3 @@
-(setq org-support-shift-select 1)
+(setq org-support-shift-select t)
 
 (provide 'noloop-org-mode)

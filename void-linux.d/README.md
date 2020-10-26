@@ -8,6 +8,7 @@ sxhkd
 polybar
 pywal
 Picom
+conky
 neofetch
 Rofi
 Ranger
